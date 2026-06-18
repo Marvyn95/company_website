@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevare Tech and Engineering - SMC Limited | Integrated Solutions</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #f8fafc; /* Pale white (Slate 50) */
+            --bg-secondary: #ffffff; /* Pure white */
+            --bg-tertiary: #f1f5f9; /* Soft pale gray (Slate 100) */
+            --accent-cyan: #0284c7; /* Vibrant Sky Blue for light text readability */
+            --accent-blue: #0369a1; /* Deep Sky Blue for hover state */
+            --text-main: #0f172a; /* Slate 900 */
+            --text-muted: #475569; /* Slate 600 */
+            --border-color: rgba(15, 23, 42, 0.08);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+
+        /* Custom Navigation Link Styling */
+        .nav-custom-link {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.25s ease;
+        }
+        .nav-custom-link:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Elegant Light Card Designs */
+        .bg-light-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 2px 4px -1px rgba(15, 23, 42, 0.02);
+        }
+        .bg-light-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(2, 132, 199, 0.25);
+            box-shadow: 0 12px 20px -3px rgba(2, 132, 199, 0.06), 0 4px 6px -2px rgba(2, 132, 199, 0.02);
+        }
+
+        /* Custom Tabs Styling */
+        .nav-pills .nav-link {
+            color: var(--text-muted);
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            background: transparent;
+        }
+        .nav-pills .nav-link.active {
+            background-color: var(--accent-cyan) !important;
+            color: #ffffff !important;
+        }
+        .nav-pills .nav-link:hover:not(.active) {
+            background-color: rgba(2, 132, 199, 0.06);
+            color: var(--accent-cyan);
+        }
+
+        /* Buttons styling */
+        .btn-cyan {
+            background-color: var(--accent-cyan);
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .btn-cyan:hover {
+            background-color: var(--accent-blue);
+            color: #ffffff;
+        }
+
+        .btn-outline-cyan {
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            background: transparent;
+            padding: 10px 24px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .btn-outline-cyan:hover {
+            background-color: rgba(2, 132, 199, 0.04);
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        /* Decorative Accent Details */
+        .accent-bar {
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-cyan);
+            margin-bottom: 20px;
+        }
+
+        /* Highlight classes */
+        .text-cyan {
+            color: var(--accent-cyan) !important;
+        }
+
+        .circle-frame {
+        width: 200px;          /* size of the circle */
+        height: 200px;
+        border-radius: 50%;    /* makes it circular */
+        overflow: hidden;      /* hides parts outside the circle */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .circle-frame img {
+        width: 100%;           /* zoom/fit horizontally */
+        height: 100%;          /* zoom/fit vertically */
+        object-fit: cover;     /* ensures the image fills the circle */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="py-4 border-bottom" style="border-color: var(--border-color) !important; background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
+                <!-- Brand Logo -->
+                <div class="d-flex align-items-center gap-2">
+                    <div class="circle-frame" style="width: 45px; height: 45px;">
+                        <img src="./static/logo.jpg" alt="Elevare Tech and Engineering Logo">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="font-heading" style="font-size: 1.25rem; letter-spacing: 2px; color: var(--text-main);">ELEVARE</span>
+                        <span class="ms-2 font-heading text-cyan" style="font-size: 0.95rem; letter-spacing: 1px;">TECH & ENGINEERING</span>
+                    </div>
+                    
+                    <span class="badge px-3 py-2" style="background-color: rgba(2, 132, 199, 0.08); color: var(--accent-cyan); border: 1px solid rgba(2, 132, 199, 0.12);">
+                        SMC Limited / LLC
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        
+        <!-- Hero Section -->
+        <section id="overview" class="mb-5 p-5 bg-light-card" style="background: radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.05) 0%, transparent 60%);">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <span class="text-uppercase font-heading text-cyan" style="font-size: 0.85rem; letter-spacing: 2px; font-weight: 600;">
+                        Elevare Tech and Engineering
+                    </span>
+                    <h1 class="display-5 my-3" style="line-height: 1.15; color: var(--text-main);">
+                        Elevating Industries Through Integrated Engineering.
+                    </h1>
+                    <p class="lead text-muted mb-4" style="font-size: 1.1rem; max-width: 620px;">
+                        Specializing in software development, mechanical and electrical systems, we deliver innovative, end-to-end solutions that drive operational excellence.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#services" class="btn btn-cyan">
+                            View Services
+                        </a>
+                        <a href="#contact" class="btn btn-outline-cyan">
+                            Contact Our Team
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center d-none d-lg-block">
+                    <div class="circle-frame">
+                        <img src="./static/logo.jpg" alt="Elevare Tech and Engineering Logo" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Overview Section -->
+        <section id="overview-content" class="mb-5 bg-light-card p-4 p-md-5">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="accent-bar"></div>
+                    <span class="text-cyan fw-bold text-uppercase fs-7 font-heading">Our Foundation</span>
+                    <h2 class="fw-bold mt-2 mb-4">Core Statements</h2>
+                    
+                    <div class="mb-4">
+                        <h5 class="fw-bold text-dark font-heading">Mission Statement</h5>
+                        <p class="text-muted" style="line-height: 1.7;">
+                            Our mission is to elevate industries by providing integrated, innovative solutions that combine cutting-edge software development, mechanical engineering, and electrical engineering expertise to improve efficiency, sustainability, and performance.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h5 class="fw-bold text-dark font-heading">Vision</h5>
+                        <p class="text-muted" style="line-height: 1.7;">
+                            To be a global leader in delivering high-tech solutions that transform businesses through the seamless integration of software, mechanical, and electrical engineering.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="accent-bar"></div>
+                    <span class="text-cyan fw-bold text-uppercase fs-7 font-heading">Value Proposition</span>
+                    <h2 class="fw-bold mt-2 mb-4">Why Choose Elevare?</h2>
+                    
+                    <div class="p-3 border rounded mb-3" style="background-color: var(--bg-primary); border-color: var(--border-color) !important;">
+                        <h6 class="fw-bold text-cyan font-heading">Specialized Expertise in Software Development</h6>
+                        <p class="text-muted small mb-0">Our team is dedicated to delivering cutting-edge web and software solutions tailored strictly to client needs.</p>
+                    </div>
+
+                    <div class="p-3 border rounded mb-3" style="background-color: var(--bg-primary); border-color: var(--border-color) !important;">
+                        <h6 class="fw-bold text-cyan font-heading">Comprehensive Capabilities</h6>
+                        <p class="text-muted small mb-0">With supplementary expertise in mechanical and electrical engineering, we ensure a multidisciplinary approach to physical and digital problem-solving.</p>
+                    </div>
+
+                    <div class="p-3 border rounded" style="background-color: var(--bg-primary); border-color: var(--border-color) !important;">
+                        <h6 class="fw-bold text-cyan font-heading">Client-Centric Approach</h6>
+                        <p class="text-muted small mb-0">Collaboration and innovation with, and for our clients are at the heart of everything we do.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Us Section -->
+        <section id="about" class="mb-5 bg-light-card p-4 p-md-5">
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="accent-bar"></div>
+                    <span class="text-cyan fw-bold text-uppercase fs-7 font-heading">Company Background</span>
+                    <h2 class="fw-bold mt-2 mb-3">Corporate Profile</h2>
+                    <p class="text-muted" style="line-height: 1.7;">
+                        Elevare Tech and Engineering is a comprehensive engineering and technology solutions provider, offering a wide range of services across mechanical, electrical, and software engineering domains. Established as a Limited Liability Company (LLC) and Single Member Constituted Limited Company (SMC Limited), the company is dedicated to revolutionizing businesses through design and development of advanced engineering solutions.
+                    </p>
+                    <p class="text-muted" style="line-height: 1.7;">
+                        With a mission to elevate industries and a vision to lead in high-tech innovation in the country, Elevare Tech and Engineering has positioned itself as a trusted partner for clients seeking cutting-edge digital transformation.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="p-4 border rounded-3" style="background-color: var(--bg-tertiary); border-color: var(--border-color) !important;">
+                        <h5 class="fw-bold mb-3 font-heading" style="color: var(--text-main);">Quick Facts</h5>
+                        <div class="mb-3">
+                            <strong class="d-block text-muted small text-uppercase">Company Name</strong>
+                            <span class="fw-semibold">Elevare Tech and Engineering - SMC Limited</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong class="d-block text-muted small text-uppercase">Structure</strong>
+                            <span class="fw-semibold">Single Member LLC (SMC Limited)</span>
+                        </div>
+                        <div class="mb-3">
+                            <strong class="d-block text-muted small text-uppercase">Date Founded</strong>
+                            <span class="fw-semibold">December, 2024</span>
+                        </div>
+                        <div>
+                            <strong class="d-block text-muted small text-uppercase">Founder/CEO</strong>
+                            <span class="fw-semibold">Marvin Luyombya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Services Section -->
+        <section id="services" class="mb-5 bg-light-card p-4 p-md-5">
+            <div class="text-center mb-5">
+                <span class="text-cyan fw-bold text-uppercase fs-7 font-heading">Capabilities</span>
+                <h2 class="fw-bold mt-2">Services Offered</h2>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Software Development -->
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0" style="background-color: var(--bg-primary);">
+                        <div class="card-header text-white py-3 border-0">
+                            <h4 class="h5 mb-0 fw-bold font-heading">Software Development</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-muted small">We build and deploy robust, tailored digital tools and web ecosystems.</p>
+                            <ul class="list-group list-group-flush small">
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Building tailored software applications to address specific business needs.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Development of enterprise solutions, automation, and decision tools.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Designing responsive, secure, and user-friendly web applications.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Advanced integrations (e-commerce, customer management, visualization).</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Development, deployment, and management of secure cloud applications.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Ongoing professional technical support and security updates.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mechanical Engineering -->
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0" style="background-color: var(--bg-primary);">
+                        <div class="card-header text-white py-3 border-0">
+                            <h4 class="h5 mb-0 fw-bold font-heading">Mechanical Engineering</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-muted small">Comprehensive structural designs, thermal setups, and hardware prototyping.</p>
+                            <ul class="list-group list-group-flush small">
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Design and prototyping of components using CAD (SolidWorks/AutoCAD).</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ End-to-end development from concept through testing to production.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ 3D printing and additive manufacturing for rapid prototyping.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Design and development of energy-efficient renewable systems.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Maintenance and repairs (pumps, HVAC, compressors, machinery).</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ HVAC for residential, commercial, and industrial sites.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Design and development of domestic and commercial water supply and drainage networks.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electrical Engineering -->
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0">
+                        <div class="card-header text-white py-3 border-0">
+                            <h4 class="h5 mb-0 fw-bold font-heading">Electrical Engineering</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-muted small">Power distribution, installation security, and renewable integration.</p>
+                            <ul class="list-group list-group-flush small">
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Design of domestic and commercial electrical setups including power distribution, lighting, and safety systems.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Design and installation of high-efficiency solar PV and hybrid power setups for domestic and commercial applications.</li>
+                                <li class="list-group-item bg-transparent text-muted px-0 border-0">◼ Routine electrical diagnostics and emergency troubleshooting services.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Market & Strategy Section -->
+        <section id="market" class="mb-5 bg-light-card p-4 p-md-5">
+            <div class="row g-5">
+                <!-- Target Market -->
+                <div class="col-lg-6">
+                    <div class="accent-bar"></div>
+                    <span class="text-cyan fw-bold text-uppercase fs-7 font-heading">Client Alignment</span>
+                    <h3 class="fw-bold mt-2 mb-4">Target Market</h3>
+                    <p class="text-muted mb-4">Our systems logic and infrastructure design fit a wide profile of sectors:</p>
+                    
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1 text-cyan font-heading">Small and Medium Enterprises (SMEs)</h6>
+                            <p class="text-muted small mb-0">Businesses seeking to scale workflow productivity and efficiency through technology.</p>
+                        </div>
+                        <div class="list-group-item bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1 text-cyan font-heading">Large Corporations</h6>
+                            <p class="text-muted small mb-0">Enterprises demanding complex infrastructure designs, data workflows, and transformations.</p>
+                        </div>
+                        <div class="list-group-item bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1 text-cyan font-heading">Government Agencies</h6>
+                            <p class="text-muted small mb-0">Public entities pursuing modernization, civil utility grids, and sustainable infrastructure.</p>
+                        </div>
+                        <div class="list-group-item bg-transparent px-0 border-0">
+                            <h6 class="fw-bold mb-1 text-cyan font-heading">Individuals & Homeowners</h6>
+                            <p class="text-muted small mb-0">Residential clients looking for custom home automation and modern engineering utilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing and Sales Strategy -->
+                <!-- <div class="col-lg-6">
+                    <div class="accent-bar"></div>
+                    <span class="text-cyan fw-bold text-uppercase fs-7 font-heading">Growth Actions</span>
+                    <h3 class="fw-bold mt-2 mb-4">Marketing & Sales Strategy</h3>
+                    <p class="text-muted mb-4">We foster expansion and brand security through dynamic strategies:</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-12 border-start border-3 ps-3" style="border-color: var(--accent-cyan) !important;">
+                            <h6 class="fw-bold mb-1 font-heading" style="color: var(--text-main);">Digital Marketing</h6>
+                            <p class="text-muted small mb-0">Utilizing strategic social media outreach, SEO optimization, and practical content writing.</p>
+                        </div>
+                        <div class="col-12 border-start border-3 ps-3" style="border-color: var(--accent-cyan) !important;">
+                            <h6 class="fw-bold mb-1 font-heading" style="color: var(--text-main);">Networking & Partnerships</h6>
+                            <p class="text-muted small mb-0">Fostering active channels alongside physical industry peers and technology professionals.</p>
+                        </div>
+                        <div class="col-12 border-start border-3 ps-3" style="border-color: var(--accent-cyan) !important;">
+                            <h6 class="fw-bold mb-1 font-heading" style="color: var(--text-main);">Conferences & Forums</h6>
+                            <p class="text-muted small mb-0">Participating in and supporting prominent engineering forums to exchange insights and build network awareness.</p>
+                        </div>
+                        <div class="col-12 border-start border-3 ps-3" style="border-color: var(--accent-cyan) !important;">
+                            <h6 class="fw-bold mb-1 font-heading" style="color: var(--text-main);">Client Referrals</h6>
+                            <p class="text-muted small mb-0">Prioritizing quality work to turn satisfied partners into key ambassadors for future projects.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- 5. Team Section -->
+        <section id="team" class="mb-5 bg-light-card p-4 p-md-5">
+            <div class="text-center mb-5">
+                <span class="text-cyan fw-bold text-uppercase fs-7 font-heading">Structure</span>
+                <h2 class="fw-bold mt-2">Leadership & Division Layout</h2>
+            </div>
+            
+            <!-- Marvin Luyombya Card -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-6 text-center">
+                    <div class="p-4 border rounded-3 bg-light shadow-sm" style="border-color: var(--border-color) !important;">
+                        <div class="p-3 text-white d-inline-block rounded-circle mb-3 fs-4 fw-bold font-heading" style="background-color: var(--accent-cyan);">
+                            ML
+                        </div>
+                        <h4 class="fw-bold mb-1 font-heading">Marvin Luyombya</h4>
+                        <span class="badge text-uppercase px-3 py-2 mb-3" style="background-color: rgba(2, 132, 199, 0.08); color: var(--accent-cyan); border: 1px solid rgba(2, 132, 199, 0.12);">CEO & Founder</span>
+                        <p class="text-muted small mb-0" style="line-height: 1.6;">
+                            Formulates corporate strategies, guides multi-department operations, and leads general engineering integration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Division Grid -->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center" style="border-color: var(--border-color); background-color: var(--bg-primary);">
+                        <h5 class="fw-bold text-dark font-heading mb-1" style="font-size: 1.1rem;">Software Division</h5>
+                        <p class="text-muted small mb-0">Focuses on building, hosting, and maintaining web, cloud, and core database architectures.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center" style="border-color: var(--border-color); background-color: var(--bg-primary);">
+                        <h5 class="fw-bold text-dark font-heading mb-1" style="font-size: 1.1rem;">Mechanical Engineers</h5>
+                        <p class="text-muted small mb-0">Handles mechanical product design, CAD testing, energy solutions, Building Services, Maintenance and Repairs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 border rounded text-center" style="border-color: var(--border-color); background-color: var(--bg-primary);">
+                        <h5 class="fw-bold text-dark font-heading mb-1" style="font-size: 1.1rem;">Electrical Engineers</h5>
+                        <p class="text-muted small mb-0">Grid and Solar power and energy solutions design and development, safety checks, troubleshooting, and repairs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border rounded text-center" style="border-color: var(--border-color); background-color: var(--bg-primary);">
+                        <h5 class="fw-bold text-dark font-heading mb-1" style="font-size: 1.1rem;">Marketing & Sales</h5>
+                        <p class="text-muted small mb-0">Connects our capabilities with client needs through structured campaigns.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border rounded text-center" style="border-color: var(--border-color); background-color: var(--bg-primary);">
+                        <h5 class="fw-bold text-dark font-heading mb-1" style="font-size: 1.1rem;">Customer Support</h5>
+                        <p class="text-muted small mb-0">Maintains continuous client relationships, offering prompt technical assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact Section -->
+        <section id="contact" class="mb-5 bg-light-card p-4 p-md-5">
+            <div class="row g-5">
+                <!-- Inquiry Side -->
+                <div class="col-lg-6">
+                    <div class="accent-bar"></div>
+                    <span class="text-cyan fw-bold text-uppercase fs-7 font-heading">Connect With Us</span>
+                    <h2 class="fw-bold mt-2 mb-4">Submit Your Project Inquiry</h2>
+                    <p class="text-muted mb-4" style="line-height: 1.7;">
+                        Our teams are prepared to consult on your exact project requirements and specifications.
+                    </p>
+                    
+                    <div class="p-4 border rounded-3 mb-4" style="background-color: var(--bg-primary); border-color: var(--border-color) !important;">
+                        <span class="d-block text-muted small text-uppercase fw-semibold mb-1 font-heading">Official E-mail Address</span>
+                        <a href="mailto:elevaretechandengineering@gmail.com" class="fs-5 fw-bold text-cyan text-decoration-none font-heading">
+                            elevaretechandengineering@gmail.com
+                        </a>
+                    </div>
+
+                    <a href="mailto:elevaretechandengineering@gmail.com" class="btn btn-cyan btn-lg w-100">
+                        Email Our Engineering Team
+                    </a>
+                </div>
+                
+                <!-- Registered Office Details -->
+                <div class="col-lg-6">
+                    <div class="p-4 border rounded-3 bg-light-card" style="background-color: var(--bg-primary); border-color: var(--border-color) !important;">
+                        <h4 class="fw-bold text-dark mb-3 font-heading">Registered Office Details</h4>
+                        <p class="text-muted small mb-4" style="line-height: 1.6;">
+                            Physical addresses are designated as:
+                        </p>
+
+                        <div class="mb-3">
+                            <strong class="d-block text-dark small text-uppercase mb-1">📍 Registered Location Address</strong>
+                            <p class="text-muted mb-0 small" style="line-height: 1.5;">
+                                Mbalwa, Kyaliwajjala, Namugongo Division,<br>
+                                Wakiso, Central,<br>
+                                Uganda
+                            </p>
+                        </div>
+
+                        <div class="mb-3">
+                            <!-- <strong class="d-block text-dark small text-uppercase mb-1">✉ Registered Postal Address</strong> -->
+                            <p class="text-muted mb-0 small" style="line-height: 1.5;">
+                                P.O. Box 116218,<br>
+                                Wakiso, Uganda
+                            </p>
+                        </div>
+
+                        <!-- <div class="p-3 bg-white border rounded" style="border-color: var(--border-color) !important;">
+                            <span class="d-block text-muted small text-uppercase fw-bold mb-1 font-heading">Registry Record Date</span>
+                            <p class="text-muted small mb-0">
+                                SMC Limited status registered and finalized on the <strong>17th day of December, 2024</strong>.
+                            </p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra Conclusion Card -->
+        <section class="mt-5 p-4 bg-light-card text-center">
+            <h4 class="fw-bold font-heading">Conclusion</h4>
+            <p class="text-muted mx-auto mb-0" style="max-width: 800px; line-height: 1.6;">
+                Elevare Tech and Engineering is well-positioned to capitalize on the growing demand for engineering and technology solutions. With a strong team, a diverse range of services, and a commitment to innovation, we aim to deliver dependable engineering and technology services in Uganda and beyond.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-top py-5 mt-5" style="background-color: var(--bg-secondary); border-color: var(--border-color) !important;">
+        <div class="container text-center">
+            <h5 class="fw-bold text-cyan mb-1 font-heading" style="letter-spacing: 1px;">ELEVARE TECH AND ENGINEERING - SMC LIMITED</h5>
+            <p class="text-muted small mb-3">&copy; 2026. All rights reserved.</p>
+            <p class="text-muted small mb-0">Founder & CEO: Marvin Luyombya • Active since December 2024</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS (Includes Popper.js for tabs function) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
